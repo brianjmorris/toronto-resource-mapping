@@ -19,10 +19,15 @@ android {
 }
 
 repositories {
+    maven {
+        url 'http://wiman.bintray.com/WimanWiFiSDK'
+    }
     mavenCentral()
 }
 
 dependencies {
+//    compile 'me.wiman.sdk:WimanWiFiSDK:1.2.5'// obsolete
+    implementation 'me.wiman.sdk:WimanWiFiSDK:1.2.5'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'

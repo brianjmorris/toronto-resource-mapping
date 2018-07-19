@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.maps.*;
 
+import me.wiman.listener.WimanSDK;
+
 public class MainActivity extends AppCompatActivity {
 
     private MapView mapView;
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        WimanSDK.initialize(this, "bfb220da-d27e-26d1-6dd0-39b4c12df6f7");
+        WimanSDK.showOptin(this);
 
         // Mapbox Access token
         Mapbox.getInstance(getApplicationContext(), getString(R.string.mapbox_access_token));
