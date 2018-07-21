@@ -11,7 +11,12 @@
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets" />
+        mapbox:mapbox_cameraTargetLat="43.66"
+        mapbox:mapbox_cameraTargetLng="-79.39"
+        mapbox:mapbox_styleUrl="@string/mapbox_style_light"
+        mapbox:mapbox_cameraTilt="0"
+        mapbox:mapbox_cameraZoom="12"
+        />
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
