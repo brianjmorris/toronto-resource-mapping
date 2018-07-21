@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.maps.*;
 
-import me.wiman.listener.WimanSDK;
+//import me.wiman.listener.WimanSDK;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,16 +21,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        WimanSDK.initialize(this, "bfb220da-d27e-26d1-6dd0-39b4c12df6f7");
-        WimanSDK.showOptin(this);
+        mapView.onCreate(savedInstanceState);
+//        WimanSDK.initialize(this, "bfb220da-d27e-26d1-6dd0-39b4c12df6f7");
+//        WimanSDK.showOptin(this);
 
         // Mapbox Access token
         Mapbox.getInstance(getApplicationContext(), getString(R.string.mapbox_access_token));
 
-
         mapView = (MapView) findViewById(R.id.mapView);
-        mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
@@ -75,12 +73,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-//    @Override
-//    protected void onCreate() {
-//        super.onCreate();
-//        mapView.onCreate();
-//    }
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -105,11 +97,10 @@ public class MainActivity extends AppCompatActivity {
         mapView.onStop();
     }
 
-//    @Override
-//    protected void onSaveInstanceState() {
-//        super.onSaveInstanceState();
-//        mapView.onSaveInstanceState();
-//    }
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mapView.onSaveInstanceState(outState);
+    }
 
     @Override
     public void onLowMemory() {
