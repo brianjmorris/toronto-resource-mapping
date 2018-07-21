@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.maps.*;
 
-//import me.wiman.listener.WimanSDK;
+import me.wiman.listener.WimanSDK;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,24 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        mapView.onCreate(savedInstanceState);
-//        WimanSDK.initialize(this, "bfb220da-d27e-26d1-6dd0-39b4c12df6f7");
-//        WimanSDK.showOptin(this);
-
-        // Mapbox Access token
-        Mapbox.getInstance(getApplicationContext(), getString(R.string.mapbox_access_token));
-
-        mapView = (MapView) findViewById(R.id.mapView);
-        mapView.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(MapboxMap mapboxMap) {
-
-                // Customize map with markers, polylines, etc.
-
-            }
-        });
-
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -49,6 +33,24 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        WimanSDK.initialize(this, "bfb220da-d27e-26d1-6dd0-39b4c12df6f7");
+        WimanSDK.showOptin(this);
+
+        // Mapbox Access token
+        Mapbox.getInstance(getApplicationContext(), getString(R.string.mapbox_access_token));
+
+        mapView = (MapView) findViewById(R.id.mapView);
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(MapboxMap mapboxMap) {
+
+                // Customize map with markers, polylines, etc.
+
+            }
+        });
+
     }
 
     @Override
