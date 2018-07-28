@@ -15,10 +15,10 @@
 
     <ImageButton
         android:id="@+id/btnFood"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:padding="15dp"
-        android:layout_margin="8dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:padding="20dp"
+        android:layout_margin="16dp"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:backgroundTint="#2edd83"
@@ -27,10 +27,10 @@
 
     <ImageButton
         android:id="@+id/btnMedical"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:padding="15dp"
-        android:layout_margin="8dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:padding="20dp"
+        android:layout_margin="16dp"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:backgroundTint="#ef2850"
@@ -39,10 +39,10 @@
 
     <ImageButton
         android:id="@+id/btnShelter"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:padding="15dp"
-        android:layout_margin="8dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:padding="20dp"
+        android:layout_margin="16dp"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:backgroundTint="#6459ff"
@@ -51,10 +51,10 @@
 
     <ImageButton
         android:id="@+id/btnWifi"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:padding="15dp"
-        android:layout_margin="8dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:padding="20dp"
+        android:layout_margin="16dp"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:backgroundTint="#40c2c4"

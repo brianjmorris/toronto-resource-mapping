@@ -7,7 +7,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
-import android.widget.Toolbar;
+//import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
 import me.wiman.listener.WimanSDK;
 
@@ -56,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        WimanSDK.initialize(this, "bfb220da-d27e-26d1-6dd0-39b4c12df6f7");
-//        WimanSDK.showOptin(this);
+        WimanSDK.initialize(this, "bfb220da-d27e-26d1-6dd0-39b4c12df6f7");
+        WimanSDK.showOptin(this);
 
     }
 
