@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/GridLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="16dp"
+    android:columnCount="2"
+    android:rowCount="2"
+    android:layout_below="@+id/Toolbar"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/btnFood"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:padding="15dp"
+        android:layout_margin="8dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:backgroundTint="#2edd83"
+        app:srcCompat="@drawable/ic_food"
+        android:scaleType="fitCenter"  />
+
+    <ImageButton
+        android:id="@+id/btnMedical"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:padding="15dp"
+        android:layout_margin="8dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:backgroundTint="#ef2850"
+        app:srcCompat="@drawable/ic_medical"
+        android:scaleType="fitCenter"  />
+
+    <ImageButton
+        android:id="@+id/btnShelter"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:padding="15dp"
+        android:layout_margin="8dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:backgroundTint="#6459ff"
+        app:srcCompat="@drawable/ic_shelter"
+        android:scaleType="fitCenter" />
+
+    <ImageButton
+        android:id="@+id/btnWifi"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:padding="15dp"
+        android:layout_margin="8dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:backgroundTint="#40c2c4"
+        app:srcCompat="@drawable/ic_wifi"
+        android:scaleType="fitCenter"  />
+
+</GridLayout>

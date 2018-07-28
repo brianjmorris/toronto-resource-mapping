@@ -1,22 +1,23 @@
 package info.brianmorris.torontoresourcemapping;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import com.mapbox.mapboxsdk.Mapbox;
-import com.mapbox.mapboxsdk.maps.*;
+import android.widget.ImageButton;
+import android.widget.Toolbar;
 
 import me.wiman.listener.WimanSDK;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MapView mapView;
+    private Toolbar toolbar;
+    private ImageButton btnFood;
+    private ImageButton btnMedical;
+    private ImageButton btnShelter;
+    private ImageButton btnWifi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,36 +25,45 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-//        setContentView(R.layout.map_main);
+        toolbar = (Toolbar) findViewById(R.id.Toolbar);
+        toolbar.setTitle("Find Resources");
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
-        WimanSDK.initialize(this, "bfb220da-d27e-26d1-6dd0-39b4c12df6f7");
-        WimanSDK.showOptin(this);
-
-        Mapbox.getInstance(getApplicationContext(), getString(R.string.mapbox_access_token));
-
-        mapView = (MapView) findViewById(R.id.mapView);
-        mapView.onCreate(savedInstanceState);
-        mapView.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(MapboxMap mapboxMap) {
-
-                // Customize map with markers, polylines, etc.
-
+        btnFood = (ImageButton)this.findViewById(R.id.btnFood);
+        btnFood.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                OpenMapActivity();
             }
         });
 
+        btnMedical = (ImageButton)this.findViewById(R.id.btnMedical);
+        btnMedical.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                OpenMapActivity();
+            }
+        });
+
+        btnShelter = (ImageButton)this.findViewById(R.id.btnShelter);
+        btnShelter.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                OpenMapActivity();
+            }
+        });
+
+        btnWifi = (ImageButton)this.findViewById(R.id.btnWifi);
+        btnWifi.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                OpenMapActivity();
+            }
+        });
+
+//        WimanSDK.initialize(this, "bfb220da-d27e-26d1-6dd0-39b4c12df6f7");
+//        WimanSDK.showOptin(this);
+
+    }
+
+    private void OpenMapActivity() {
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -77,46 +87,4 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mapView.onStart();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mapView.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mapView.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        mapView.onStop();
-    }
-
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        mapView.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        mapView.onLowMemory();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mapView.onDestroy();
-    }
-
 }

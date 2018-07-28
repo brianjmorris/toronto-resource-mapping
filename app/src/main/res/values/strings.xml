@@ -2,4 +2,6 @@
     <string name="app_name">Toronto Resource Mapping</string>
     <string name="action_settings">Settings</string>
     <string name="mapbox_access_token">pk.eyJ1IjoiYnJpYW5qbW9ycmlzIiwiYSI6ImNqanFneGp0ZDA0ZXkzb3BlMWxmd3NhaXkifQ.wF9usuHKh23SDm5MKDPEiw</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_menu">MenuActivity</string>
 </resources>
